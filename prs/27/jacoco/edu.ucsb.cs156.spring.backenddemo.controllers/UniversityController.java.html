@@ -32,7 +32,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Operation(summary=&quot;Get a list of universities matching a name&quot;, description =&quot;Uses API documented here: http://universities.hipolabs.com/search&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getUniversities(
-        @Parameter(name=&quot;university&quot;, example=&quot;Harvard&quot;) @RequestParam String name
+        @Parameter(name=&quot;name&quot;, example=&quot;Harvard&quot;) @RequestParam String name
     ) throws JsonProcessingException {
 <span class="fc" id="L37">        log.info(&quot;getUniversities: name={}&quot;, name);</span>
 <span class="fc" id="L38">        String result = UniversityQueryService.getJSON(name);</span>
