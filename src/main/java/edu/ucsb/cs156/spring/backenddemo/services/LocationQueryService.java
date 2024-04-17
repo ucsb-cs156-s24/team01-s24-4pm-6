@@ -1,11 +1,9 @@
 package edu.ucsb.cs156.spring.backenddemo.services;
 
-
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
-
 
 @Service
 public class LocationQueryService {
@@ -16,7 +14,7 @@ public class LocationQueryService {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public static final String ENDPOINT = "";
+    public static final String ENDPOINT = "https://nominatim.openstreetmap.org/search/search.php?q={location}&format=jsonv2";
 
     public String getJSON(String location) throws HttpClientErrorException {
         return "";
