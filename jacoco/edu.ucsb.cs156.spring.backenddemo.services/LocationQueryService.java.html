@@ -30,21 +30,23 @@ public class LocationQueryService {
 <span class="fc" id="L30">        restTemplate = restTemplateBuilder.build();</span>
 <span class="fc" id="L31">    }</span>
 
-    public static final String ENDPOINT = &quot;https://nominatim.openstreetmap.org/search/search.php?q={location}&amp;format=jsonv2&quot;;
+    // public static final String ENDPOINT =
+    // &quot;https://nominatim.openstreetmap.org/search/search.php?q={location}&amp;format=jsonv2&quot;;
+    public static final String ENDPOINT = &quot;https://nominatim.openstreetmap.org/search.php?q={location}&amp;format=jsonv2&quot;;
 
     public String getJSON(String location) throws HttpClientErrorException {
-<span class="fc" id="L36">        log.info(&quot;location={}&quot;, location);</span>
-<span class="fc" id="L37">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="fc" id="L38">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="fc" id="L39">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+<span class="fc" id="L38">        log.info(&quot;location={}&quot;, location);</span>
+<span class="fc" id="L39">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L40">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L41">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="fc" id="L41">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(headers);</span>
+<span class="fc" id="L43">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(headers);</span>
 
-<span class="fc" id="L43">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;location&quot;, location);</span>
+<span class="fc" id="L45">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;location&quot;, location);</span>
 
-<span class="fc" id="L45">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
+<span class="fc" id="L47">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
                 uriVariables);
-<span class="fc" id="L47">        return re.getBody();</span>
+<span class="fc" id="L49">        return re.getBody();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
