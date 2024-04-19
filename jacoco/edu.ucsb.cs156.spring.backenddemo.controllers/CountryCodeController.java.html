@@ -13,30 +13,29 @@ import org.springframework.http.ResponseEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name=&quot;Country Code info from https://public.opendatasoft.com/explore/dataset/countries-codes&quot;)
-<span class="fc" id="L22">@Slf4j</span>
+@Tag(name = &quot;Country Code info from https://public.opendatasoft.com/explore/dataset/countries-codes&quot;)
+<span class="fc" id="L21">@Slf4j</span>
 @RestController
 @RequestMapping(&quot;/api/countrycodes&quot;)
-<span class="fc" id="L25">public class CountryCodeController {</span>
+<span class="fc" id="L24">public class CountryCodeController {</span>
 
-<span class="fc" id="L27">    ObjectMapper mapper = new ObjectMapper();</span>
+<span class="fc" id="L26">    ObjectMapper mapper = new ObjectMapper();</span>
 
     @Autowired
     CountryCodeQueryService countryCodeQueryService;
 
-    @Operation(summary=&quot;Get a country's ISO codes and more&quot;, description =&quot;Country data uploaded to OpenDataSoft by the International Labour Organization&quot;)
+    @Operation(summary = &quot;Get a country's ISO codes and more&quot;, description = &quot;Country data uploaded to OpenDataSoft by the International Labour Organization&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getCountryCodes(
-        @Parameter(name=&quot;country&quot;, example=&quot;United States&quot;) @RequestParam String country
-    ) throws JsonProcessingException {
-<span class="fc" id="L37">        log.info(&quot;getCountryCodes: country={}&quot;, country);</span>
-<span class="fc" id="L38">        String result = countryCodeQueryService.getJSON(country);</span>
-<span class="fc" id="L39">        return ResponseEntity.ok().body(result);</span>
+            @Parameter(name = &quot;country&quot;, example = &quot;United States&quot;) @RequestParam String country)
+            throws JsonProcessingException {
+<span class="fc" id="L36">        log.info(&quot;getCountryCodes: country={}&quot;, country);</span>
+<span class="fc" id="L37">        String result = countryCodeQueryService.getJSON(country);</span>
+<span class="fc" id="L38">        return ResponseEntity.ok().body(result);</span>
     }
 
 }
