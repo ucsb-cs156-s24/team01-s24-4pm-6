@@ -3,8 +3,8 @@
 Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 
 ```
-|   Name    | GitHub Id |  Service                    | Controller                |
-|-----------|-----------|-----------------------------|---------------------------|
+|   Name    | GitHub Id     |  Service                    | Controller                
+|-----------|---------------|-----------------------------|---------------------------|
 |Nik        |nbelle1        | `LocationQueryService`      | `LocationController`      |
 |Dakota     |dakotazoid56   | `PublicHolidayQueryService` | `PublicHolidayController` |
 |Bryce      |brycewangg     | `TidesQueryService`         | `TidesController`         |
